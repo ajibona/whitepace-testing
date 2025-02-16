@@ -8,6 +8,11 @@ body{
   font-size: 1rem;
   font-family: var(--ff-font-family-inter);
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.scroll-hidden{
+  overflow: hidden;
 }
 
 :root{
@@ -26,6 +31,7 @@ header{
   background-color: var(--cc-primary-color-1);
   padding: 20px 0;
   border: none;
+  z-index: 10;
 }
 
 a{
@@ -147,7 +153,7 @@ button{
 .mobile__side--navigation{
   position: absolute;
   top: 0;
-  right: -2500px;
+  left: 0;
   background-color: var(--cc-primary-color-1);
   width: 100%;
   height: 100vh;
@@ -158,6 +164,8 @@ button{
   gap: 20px;
   transition: all .1s ease-in;
   display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .close__menu{
@@ -168,6 +176,7 @@ button{
   font-size: 2.5rem;
   color: var(--cc-secondary-color-3);
   float: right;
+  cursor: pointer;
 }
 
 .mobile__links{
@@ -187,7 +196,7 @@ button{
 .mobile__activated{
   visibility: visible;
   display: block;
-  right: 0;
+  opacity: 100%;
 }
 
 
@@ -273,9 +282,17 @@ main{
   display: block;
  }
 
+ .mobile__side--navigation .mobile__btn--links{
+  display: none;
+ }
+
 }
 
 @media (width <= 900px){
+
+  .mobile__side--navigation .mobile__btn--links{
+    display: block;
+   }
 
   .mobile__side--navigation{
     display: block;
@@ -289,10 +306,12 @@ main{
   .btn__login{
     display: block;
     margin-bottom: 20px;
+    font-size: 1.5rem;
   }
 
   .btn__try{
     margin-left: 0;
+    font-size: 1.5rem;
   }
 
  .btn__links{

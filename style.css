@@ -232,6 +232,7 @@ main{
   font-weight: 300;
   line-height: 1.7;
   margin-bottom: 60px;
+  font-size: 1.1rem
 }
 
 .hero__banner{
@@ -395,7 +396,7 @@ main{
  }
 
  .square{
-  height: 500px;
+  height: 350px;
  }
 
  .btn__hero{
@@ -416,7 +417,7 @@ main{
   }
 
   .project__headings span::before{
-    bottom: -50px;
+    bottom: -30px;
     background-size: contain;
   }
 }
